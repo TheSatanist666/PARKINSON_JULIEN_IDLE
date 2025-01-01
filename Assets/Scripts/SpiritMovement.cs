@@ -31,8 +31,8 @@ public class SpiritMovement : MonoBehaviour
             t = 0;
             xPosOld = xPosNew;
             yPosOld = yPosNew;
-            xPosNew = Random.Range(0f,900f);
-            yPosNew = Random.Range(0f,600f);
+            xPosNew = Random.Range(-100f,650f);
+            yPosNew = Random.Range(0f,400f);
         }
         else if(canMove == true)
         {

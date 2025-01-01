@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color: 3
   value: 1
-  spiritImage: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  spiritImage: {fileID: 21300000, guid: 38dfa75941ccf7e40a5087cb9ca20272, type: 3}
