@@ -29,9 +29,17 @@ public class SpiritReader : MonoBehaviour
         ReadSpirit(_bag[Random.Range(0,_bag.Length)]); //selectionne aleatoirement un esprit dans le sac
     }
 
+    private void Update()
+    {
+        if (Input.GetKey("q") && Input.GetKey("p"))
+        {
+            SceneManager.LoadScene(2);
+        }
+    }
+
     public void ChangeSpirit() //remplace l'esprit actuel par un nouvel esprit venant du sac
     {
-        _scoreManager.RiseScore();
+        _scoreManager.RiseScore(_currentSpirit.value);
         ReadSpirit(_bag[Random.Range(0, _bag.Length)]);
     }
     

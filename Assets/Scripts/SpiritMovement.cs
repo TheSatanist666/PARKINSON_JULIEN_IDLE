@@ -43,7 +43,7 @@ public class SpiritMovement : MonoBehaviour
         }
     }
 
-    public void UpgradeSlow()
+    public void SlowUp()
     {
         slowUpgrade += 0.005f;
     }
@@ -54,7 +54,7 @@ public class SpiritMovement : MonoBehaviour
         canMove = true;
     }
 
-    public void UpgradeSize()
+    public void SizeUp()
     {
         transform.localScale = transform.localScale * 1.2f;
     }
