@@ -8,7 +8,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField]
     private int _score;
     [SerializeField]
-    private TextMeshProUGUI scoreText;
+    private TextMeshProUGUI _scoreText;
     private float clickerUpgrade = 1;
 
     private void Start()
@@ -19,7 +19,7 @@ public class ScoreManager : MonoBehaviour
     public void ChangeScore(int newScore)
     {
         _score = newScore;
-        scoreText.text = "Lueurs utilisables : " + _score.ToString();
+        _scoreText.text = "Lueurs utilisables : " + _score.ToString();
     }
 
     public void RiseScore()
