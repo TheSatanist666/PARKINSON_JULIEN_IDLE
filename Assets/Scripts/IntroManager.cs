@@ -20,7 +20,7 @@ public class IntroManager : MonoBehaviour
 
     private void Intro() //script different de LaunchIntro pour plus de clarte, il gere le monologue du personnage principal au debut
     {
-        _audioSource.PlayOneShot(_monologue, 0.7F);
+        _audioSource.PlayOneShot(_monologue);
         StartCoroutine(LaunchClicker());
     }
     private IEnumerator LaunchClicker()

@@ -23,10 +23,12 @@ public class SpiritReader : MonoBehaviour
 
     private float blueScore, redScore, yellowScore, greenScore; //scores representants les pourcentages de remplissage des esprits (0 = 0% ; 200 = 0%)
 
+    public int Bonus; //bonus qui augment la puissance du clic en fonction du niveau d'augmentation
+
     void Start()
     {
         _scoreManager = FindObjectOfType<ScoreManager>();
-        ReadSpirit(_bag[Random.Range(0,_bag.Length)]); //selectionne aleatoirement un esprit dans le sac
+        ReadSpirit(_bag[Random.Range(0, _bag.Length)]); //selectionne aleatoirement un esprit dans le sac
     }
 
     private void Update()
@@ -37,9 +39,14 @@ public class SpiritReader : MonoBehaviour
         }
     }
 
+    public void BonusUp()
+    {
+        Bonus += 1;
+    }
+
     public void ChangeSpirit() //remplace l'esprit actuel par un nouvel esprit venant du sac
     {
-        _scoreManager.RiseScore(_currentSpirit.value);
+        _scoreManager.RiseScore(_currentSpirit.value + Bonus);
         ReadSpirit(_bag[Random.Range(0, _bag.Length)]);
     }
     

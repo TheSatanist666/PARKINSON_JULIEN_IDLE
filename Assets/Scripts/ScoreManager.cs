@@ -16,7 +16,10 @@ public class ScoreManager : MonoBehaviour
     [SerializeField]
     private SpiritMovement _spiritMovement;
 
-    private int sizeCost = 50, slowCost = 70, autoClickerCost = 5;
+    private int sizeCost = 50, slowCost = 70, autoClickerCost = 10;
+
+    [SerializeField]
+    private SpiritReader _spiritReader;
 
     private void Start()
     {
@@ -39,9 +42,10 @@ public class ScoreManager : MonoBehaviour
         {
             clickerUpgrade += 1.5f;
             _score -= autoClickerCost;
-            autoClickerCost += 5;
+            autoClickerCost += 10;
             _autoClickCostText.text = "Coût : " + autoClickerCost.ToString();
             _scoreText.text = "Lueurs utilisables : " + _score.ToString();
+            _spiritReader.BonusUp();
         }
         else
         {
