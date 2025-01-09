@@ -8,23 +8,23 @@ public class EndingScript : MonoBehaviour
 {
 
     [SerializeField]
-    private AudioClip _line1, _line2, _line3, _line4, _line5, _line6, _line7, _line8, _line9, _line10;
+    private AudioClip _line1, _line2, _line3, _line4, _line5, _line6, _line7, _line8, _line9, _line10; //lignes audios numerotes dans l'ordre croissant
     [SerializeField]
     private AudioSource _audioSource;
-    private int voiceline;
+    private int voiceline; // numero de la voiceline jouee
     [SerializeField]
-    private Image _brother, _father, _mother, _dog;
+    private Image _brother, _father, _mother, _dog; //images representants les esprits de la famille
     [SerializeField]
     private GameObject _fin;
 
-    void Start()
+    void Start() //Demarre le dialogue
     {
         _fin.SetActive(false);
         voiceline = 1;
         StartCoroutine(TimeToSpaceVoicelines());
     }
 
-    private IEnumerator TimeToSpaceVoicelines() //Coroutine qui se fait succéder les lignes de dialogue
+    private IEnumerator TimeToSpaceVoicelines() //Coroutine qui se fait succeder les lignes de dialogue
     {
         if (voiceline == 1)
         {

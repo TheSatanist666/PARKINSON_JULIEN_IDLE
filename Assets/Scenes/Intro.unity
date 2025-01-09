@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -668,7 +668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spirits: {fileID: 1740723468}
-  _monologue: {fileID: 8300000, guid: 883239bd1d981064a9674379f212e148, type: 3}
+  _monologue: {fileID: 8300000, guid: 57f3dcffdf645bc498cd1f780dcba4d9, type: 3}
   _audioSource: {fileID: 693033229}
 --- !u!82 &693033229
 AudioSource:
@@ -1122,7 +1122,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 358, y: 97}
+  m_AnchoredPosition: {x: 253, y: 124.57}
   m_SizeDelta: {x: 83.7851, y: 83.7851}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1334905722

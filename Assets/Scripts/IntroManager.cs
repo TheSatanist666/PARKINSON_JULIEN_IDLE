@@ -20,12 +20,12 @@ public class IntroManager : MonoBehaviour
 
     private void Intro() //script different de LaunchIntro pour plus de clarte, il gere le monologue du personnage principal au debut
     {
-        _audioSource.PlayOneShot(_monologue);
+        _audioSource.PlayOneShot(_monologue, 2f);
         StartCoroutine(LaunchClicker());
     }
     private IEnumerator LaunchClicker()
     {
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(21);
         SceneManager.LoadScene(1); //charge la scene principale du clicker
     }
 }

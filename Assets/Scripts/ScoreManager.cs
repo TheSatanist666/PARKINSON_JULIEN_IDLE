@@ -9,34 +9,34 @@ public class ScoreManager : MonoBehaviour
     private int _score;
 
     [SerializeField]
-    private TextMeshProUGUI _scoreText, _sizeCostText, _slowCostText, _autoClickCostText;
+    private TextMeshProUGUI _scoreText, _sizeCostText, _slowCostText, _autoClickCostText; //les textes affichant le score et les couts des amelioration
 
     private float clickerUpgrade = 1;
 
     [SerializeField]
     private SpiritMovement _spiritMovement;
 
-    private int sizeCost = 50, slowCost = 70, autoClickerCost = 10;
+    private int sizeCost = 50, slowCost = 70, autoClickerCost = 10; // les couts de base des augmentations
 
     [SerializeField]
     private SpiritReader _spiritReader;
 
     private void Start()
     {
-        StartCoroutine(AutoClicker());
+        StartCoroutine(AutoClicker()); // lance l'autoclicker (il ne fait rien gagner au debut)
     }
 
-    public void ChangeScore(int newScore)
+    public void ChangeScore(int newScore) // actualise l'affichage du score
     {
         _score = newScore;
         _scoreText.text = "Lueurs utilisables : " + _score.ToString();
     }
 
-    public void RiseScore(int valueToAdd)
+    public void RiseScore(int valueToAdd) // augmente de score de la valeur de l'argument
     {
         ChangeScore(_score+valueToAdd);
     }
-    public void UpgradeAutoClicker()
+    public void UpgradeAutoClicker() // ameliore l'autoclicker
     {
         if (_score >= autoClickerCost)
         {
@@ -53,7 +53,7 @@ public class ScoreManager : MonoBehaviour
             StartCoroutine(CostTextReset());
         }
     }
-    public void UpgradeSize()
+    public void UpgradeSize() // agrandit la taille de l'esprit
     {
         if (_score >= sizeCost)
         {
@@ -69,7 +69,7 @@ public class ScoreManager : MonoBehaviour
             StartCoroutine(CostTextReset());
         }
     }
-    public void UpgradeSlow()
+    public void UpgradeSlow() // ralentit l'esprit
     {
         if (_score >= slowCost)
         {
@@ -86,7 +86,7 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    private IEnumerator AutoClicker()
+    private IEnumerator AutoClicker() // ameliore l'auto Clicker
     {
         while(true)
         {
@@ -97,7 +97,7 @@ public class ScoreManager : MonoBehaviour
             }
         }
     }
-    private IEnumerator CostTextReset()
+    private IEnumerator CostTextReset() // Actualise l'affichage des couts
     {
         yield return new WaitForSeconds(1);
         _slowCostText.text = "Coût : " + slowCost.ToString();

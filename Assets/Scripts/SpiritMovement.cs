@@ -14,17 +14,17 @@ public class SpiritMovement : MonoBehaviour
     private int _offset = 0;
     private float slowUpgrade = 0;
     
-    void Start()
+    void Start() // enregistre les positions de depart
     {
         xPosOld = transform.position.x;
         yPosOld = transform.position.y;
     }
 
-    void Update()
+    void Update() //relance le deplacement de l'esprit
     {
         SpiritMoving();
     }
-    void SpiritMoving()
+    void SpiritMoving() // deplace l'esprit
     {
         if(t >= 1)
         {
@@ -43,18 +43,18 @@ public class SpiritMovement : MonoBehaviour
         }
     }
 
-    public void SlowUp()
+    public void SlowUp() // ralentit
     {
         slowUpgrade += 0.005f;
     }
 
-    private IEnumerator MaCoroutine()
+    private IEnumerator MaCoroutine() // intervale entre chaque deplacement
     {
         yield return new WaitForSeconds(0.01f + slowUpgrade);
         canMove = true;
     }
 
-    public void SizeUp()
+    public void SizeUp() //augmente la taille
     {
         transform.localScale = transform.localScale * 1.2f;
     }

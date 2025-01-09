@@ -39,7 +39,7 @@ public class SpiritReader : MonoBehaviour
         }
     }
 
-    public void BonusUp()
+    public void BonusUp() // augmente la puissance du clic
     {
         Bonus += 1;
     }
@@ -87,7 +87,7 @@ public class SpiritReader : MonoBehaviour
                 }
                 break;
         }
-        if ((blueScore == 200 && redScore == 200) && (greenScore == 200 && yellowScore == 200))
+        if ((blueScore == 200 && redScore == 200) && (greenScore == 200 && yellowScore == 200)) // conditions de victoire
         {
             SceneManager.LoadScene(2);
         }
